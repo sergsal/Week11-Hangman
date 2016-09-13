@@ -1,7 +1,9 @@
+var matchedGuess = [];
+var lettersGuessed = [];
 function Words (guess, gameWord) {
 	this.wordArray = gameWord.split("");
 	this.guess = guess;
-	this.goodGuess = function () {
+	this.checkGuess = function () {
 		for (i=0; i < this.wordArray.length; i++) {
 			if ((guess === this.wordArray[i]) && (matchedGuess.indexOf(guess) == -1)) {
 				matchedGuess.push(guess);
@@ -11,16 +13,21 @@ function Words (guess, gameWord) {
 			}
 		}; //end of for loop
 		console.log(matchedGuess);
-	}; //end of checkguess
-	this.updateGuess = function () {
 		if ((lettersGuessed.indexOf(guess) == -1) && (this.wordArray.indexOf(guess) == -1)){
 			
 			lettersGuessed.push(guess);
-			console.log(lettersGuessed);
+			console.log("incorrect guesses: " + lettersGuessed);
+
 		};
-	}
+	}; //end of checkguess
+	// this.updateGuess = function () {
+	// 	if ((lettersGuessed.indexOf(guess) == -1) && (this.wordArray.indexOf(guess) == -1)){
+			
+	// 		lettersGuessed.push(guess);
+	// 		console.log(lettersGuessed);
+	// 	};
+	// }
 
 
 };
-
 module.exports = Words

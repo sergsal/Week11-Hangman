@@ -1,9 +1,4 @@
-var imported = require('./word.js');
-var run = new imported("c","bat");
-
-lettersGuessed = [];
-matchedGuess = [];
-wordGuessed = false;
+var matchedGuess = [];
 function Display (guess, gameWord) {
 	var wordView = "";
 	this.wordArray = gameWord.split("");
