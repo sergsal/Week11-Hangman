@@ -19,6 +19,5 @@ function Display (guess, gameWord) {
 		console.log(wordView)
 	};
 };
-var check = new Display ("c","bat")
-run.updateGuess();
-check.lines();
+
+module.exports = Display
